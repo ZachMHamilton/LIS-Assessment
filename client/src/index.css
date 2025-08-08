@@ -55,21 +55,26 @@ button:hover {
   background-color: #357abd;
 }
 
-.confirmation-card {
-  background-color: #f9fafb;
-  border: 1.5px solid #ddd;
-  padding: 1.2rem 1rem;
-  border-radius: 6px;
+.confirmation-table {
+  width: 100%;
+  border-collapse: collapse;
   margin-bottom: 1.5rem;
   font-size: 1rem;
-  color: #222;
 }
 
-.confirmation-card p {
-  margin: 0.4rem 0;
+.confirmation-table th,
+.confirmation-table td {
+  border: 1.5px solid #ddd;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
 }
 
-.confirmation-card span {
-  font-weight: 700;
-  color: #4a90e2;
+.confirmation-table th {
+  background-color: #4a90e2;
+  color: white;
+  font-weight: 600;
+}
+
+.confirmation-table tbody tr:nth-child(even) {
+  background-color: #f9fafb;
 }

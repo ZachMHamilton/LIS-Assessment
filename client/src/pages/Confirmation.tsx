@@ -19,24 +19,34 @@ function Confirmation({ data, onBack }: ConfirmationProps) {
 
   return (
     <main className="container">
-      <h1>Past Submissions</h1>
+      <h1>Submissions</h1>
 
       {loading ? (
         <p>Loading...</p>
       ) : submissions.length === 0 ? (
         <p>No submissions yet.</p>
       ) : (
-        <div>
-          {submissions.map((submission) => (
-            <div className="confirmation-card"
-              >
-              <p>{submission.name}</p>
-              <p>{submission.age}</p>
-              <p>{submission.title}</p>
-              <p>{submission.hometown}</p>
-            </div>
+      <table className="confirmation-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Title</th>
+            <th>Hometown</th>
+          </tr>
+        </thead>
+        <tbody>
+          {submissions.map((submission, index) => (
+            <tr key={index}>
+              <td>{submission.name}</td>
+              <td>{submission.age || ''}</td>
+              <td>{submission.title}</td>
+              <td>{submission.hometown || ''}</td>
+            </tr>
           ))}
-        </div>
+        </tbody>
+      </table>
+
       )}
 
       <button onClick={onBack}>

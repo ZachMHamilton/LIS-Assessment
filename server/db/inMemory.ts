@@ -1,18 +1,21 @@
-import type { Submission } from "./submissionModel";
+import type { SubmissionStore } from "../models/submissionStore";
+import type { Submission } from "../models/submission";
 
 let submissions: Submission[] = [];
 let idCounter = 1;
 
-export async function getAllSubmissions(): Promise<Submission[]> {
-  return submissions;
-}
+export const inMemory: SubmissionStore = {
+  async getAllSubmissions(): Promise<Submission[]> {
+    return submissions;
+  },
 
-export async function createSubmission(data: Submission): Promise<Submission> {
-  const newSubmission: Submission = {
-    id: idCounter++,
-    created_at: new Date(),
-    ...data,
-  };
-  submissions.push(newSubmission);
-  return newSubmission;
-}
+  async createSubmission(data: Submission): Promise<Submission> {
+    const newSubmission: Submission = {
+      ...data,
+      id: idCounter++,
+      created_at: new Date()
+    };
+    submissions.push(newSubmission);
+    return newSubmission;
+  }
+};

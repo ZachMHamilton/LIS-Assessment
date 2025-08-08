@@ -1,24 +1,19 @@
 import express from 'express';
-import pool from "./db";
+import submissionRoute from './routes/submissionRoute';
+import { inDb } from './db/inDb';
+import { inMemory } from './db/inMemory';
 
 const app = express();
 const PORT = 3000;
-const useDb = "true";
+
+// Set to true to use the database and false to use in-memory storage
+const useDb = false;
+const store = useDb ? inDb : inMemory;
 
 app.use(express.json());
 
-app.get("/", async (req, res) => {
-  try {
-    const result = await pool.query("SELECT NOW()");
-    res.status(200).json({
-      message: "connected",
-      currentTime: result.rows[0].now,
-    });
-  } catch (error) {
-    console.error("connection error:", error);
-    res.status(500).json({ error: "failed to connect" });
-  }
-});
+// inject store
+app.use('/api/submissions', submissionRoute(store));
 
 app.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`);

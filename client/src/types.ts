@@ -1,10 +1,9 @@
 // props
 export interface HomeProps {
-  onSubmit: (data: any) => void;
+  onSuccess: () => void;
 };
 
 export interface ConfirmationProps {
-  data: Submission;
   onBack: () => void;
 }
 

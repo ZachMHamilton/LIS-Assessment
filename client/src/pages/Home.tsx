@@ -1,7 +1,8 @@
+
 import { useState } from "react";
 import type { HomeProps, Submission } from "../types"
 
-function Home({onSubmit} : HomeProps) {
+function Home({onSuccess}: HomeProps) {
   const [formData, setFormData] = useState<Submission>({
     name: "",
     age: "",
@@ -9,20 +10,38 @@ function Home({onSubmit} : HomeProps) {
     hometown: ""
   });
 
-  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setFormData(prev => ({
       ...prev,
       [name]: name === "age" ? (value === "" ? "" : parseInt(value) || "") : value
     }));
   }
-  
+
+  const handleSubmit = (event: React.FormEvent) => { 
+    event.preventDefault();
+    fetch('/api/submissions/add', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: formData.name,
+        age: formData.age,
+        title: formData.title,
+        hometown: formData.hometown,
+      }),
+    })
+      .then((response) => response.json())
+      .catch((error) => {
+        console.error('Error adding submission:', error);
+    });
+    onSuccess();
+  }
 
   return (
     <div className="container">
       <h1>Personal Information</h1>
       
-      <form onSubmit={() => onSubmit(formData)}>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">
             Name

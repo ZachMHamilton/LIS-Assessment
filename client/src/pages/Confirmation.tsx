@@ -2,14 +2,24 @@ import type { ConfirmationProps, Submission } from "../types"
 import { useState, useEffect } from "react";
 
 
-function Confirmation({ data, onBack }: ConfirmationProps) {
-  const [submissions, setSubmissions] = useState<Submission[]>([{ name: "test", age: "30", title: "fake person" ,hometown: "test town"}]); // fake data to test previous subs
+function Confirmation({onBack }: ConfirmationProps) {
+  const [submissions, setSubmissions] = useState<Submission[]>([]);
   const [loading, setLoading] = useState(true);
 
 
   useEffect(() => {
     const fetchSubmissions = async () => {
-      setSubmissions((prev) => [data, ...prev]);
+      await fetch('/api/submissions/get', {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json'},
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          setSubmissions(data);
+        })
+        .catch((error) => {
+          console.error('Error fetching submissions:', error);
+      });
       setLoading(false);
     };
 

@@ -8,6 +8,7 @@ const PORT = 3000;
 
 // Set to true to use the database and false to use in-memory storage
 const useDb = false;
+
 const store = useDb ? inDb : inMemory;
 
 app.use(express.json());

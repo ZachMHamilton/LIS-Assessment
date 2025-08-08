@@ -17,6 +17,5 @@ This is a full-stack coding exercise that implements a basic submission tracker.
 4. Run 'npm run dev' in terminal (this runs client and server concurrently)
 
 ## Project Structure
-Client
-  App.tsx
-  
+- /client/src
+  - App.tsx

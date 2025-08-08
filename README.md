@@ -17,13 +17,13 @@ This is a full-stack coding exercise that implements a basic submission tracker.
 4. Run 'npm run dev' in terminal (this runs client and server concurrently)
 
 ## Project Structure
-- /client/src **React + vite frontend**
-  - App.tsx   **Routing component**
-  - types.ts  **Basic types**
-  - main.tsx  **Main entry point for react**
-  - index.ts         **Base html entry**
-- /server    **Node + Express backend**
-  - /controllers **Primary business logic**
-  - /routes        **Defines endpoints**
-  - /db             **SQL and in-memory storage implementations**
-  - /models     **Schemas/types**
+- /client/src - **React + vite frontend**
+  - App.tsx  - **Routing component**
+  - types.ts - **Basic types**
+  - main.tsx - **Main entry point for react**
+  - index.ts - **Base html entry**
+- /server - **Node + Express backend**
+  - /controllers - **Primary business logic**
+  - /routes - **Defines endpoints**
+  - /db - **SQL and in-memory storage implementations**
+  - /models - **Schemas/types**

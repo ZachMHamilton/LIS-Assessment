@@ -17,13 +17,13 @@ This is a full-stack coding exercise that implements a basic submission tracker.
 4. Run 'npm run dev' in terminal (this runs client and server concurrently)
 
 ## Project Structure
-- /client/src     &nbsp; &nbsp; **React + vite frontend**
-  - App.tsx           &nbsp; &nbsp; &nbsp;**Routing component**
-  - types.ts          &nbsp; &nbsp; &nbsp;**Basic types**
-  - main.tsx          &nbsp; &nbsp; &nbsp;**Main entry point for react**
-  - index.ts          &nbsp; &nbsp; &nbsp;**Base html entry**
-- /server         &nbsp; &nbsp; **Node + Express backend**
-  - /controllers      &nbsp; &nbsp; &nbsp;**Primary business logic**
-  - /routes           &nbsp; &nbsp; &nbsp;**Defines endpoints**
-  - /db               &nbsp; &nbsp; &nbsp;**SQL and in-memory storage implementations**
-  - /models           &nbsp; &nbsp; &nbsp;**Schemas/types**
+- /client/src     &nbsp; &nbsp; &nbsp; &nbsp;**React + vite frontend**
+  - App.tsx           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;**Routing component**
+  - types.ts          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;**Basic types**
+  - main.tsx          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;**Main entry point for react**
+  - index.ts          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;**Base html entry**
+- /server         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;**Node + Express backend**
+  - /controllers      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;**Primary business logic**
+  - /routes           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;**Defines endpoints**
+  - /db               &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;**SQL and in-memory storage implementations**
+  - /models           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;**Schemas/types**

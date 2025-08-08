@@ -7,13 +7,13 @@ This is a full-stack coding exercise that implements a basic submission tracker.
 1. Clone the repository
 2. Run npm install
 3. Choose data store
-  - If using SQL database:
-    - Set useDb flag in server.ts to true
-    - Create a .env file in the root of the project based on .env.example
-    - Set env variables for your database
-    - Table structure can be found in server/models/submission.ts
-  - If using in memory store
-    - Set useDb flag in server.ts to true
+      - If using SQL database:
+        - Set useDb flag in server.ts to true
+        - Create a .env file in the root of the project based on .env.example
+        - Set env variables for your database
+        - Table structure can be found in server/models/submission.ts
+      - If using in memory store
+        - Set useDb flag in server.ts to true
 4. Run 'npm run dev' in terminal
 
 ## Project Structure

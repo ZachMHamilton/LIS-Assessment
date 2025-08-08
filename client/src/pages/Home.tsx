@@ -19,9 +19,10 @@ function Home({onSubmit} : HomeProps) {
   
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded shadow mt-10">
+    <div className="container">
       <h1>Personal Information</h1>
-      <form onSubmit={() => onSubmit(formData)} className="space-y-4">
+      
+      <form onSubmit={() => onSubmit(formData)}>
         <div>
           <label htmlFor="name">
             Name
@@ -46,9 +47,9 @@ function Home({onSubmit} : HomeProps) {
             name="age"
             value={formData.age}
             onChange={handleChange}
-            required
           />
-        </div> 
+        </div>
+        
         <div>
           <label htmlFor="title">
             Title
@@ -73,7 +74,6 @@ function Home({onSubmit} : HomeProps) {
             name="hometown"
             value={formData.hometown}
             onChange={handleChange}
-            required
           />
         </div>
         
@@ -84,7 +84,7 @@ function Home({onSubmit} : HomeProps) {
         </button>
       </form>
     </div>
-  )
+  );
 }
 
 export default Home

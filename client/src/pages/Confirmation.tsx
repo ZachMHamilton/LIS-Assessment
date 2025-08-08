@@ -18,29 +18,28 @@ function Confirmation({ data, onBack }: ConfirmationProps) {
 
 
   return (
-    <main className="max-w-xl mx-auto mt-10 px-4">
-      <h1 className="text-2xl font-bold mb-6">Past Submissions</h1>
+    <main className="container">
+      <h1>Past Submissions</h1>
 
       {loading ? (
         <p>Loading...</p>
       ) : submissions.length === 0 ? (
-        <p className="text-gray-500">No submissions yet.</p>
+        <p>No submissions yet.</p>
       ) : (
-        <div className="space-y-4">
+        <div>
           {submissions.map((submission) => (
-            <div
-              className="border p-4 rounded shadow-sm bg-white"
-            >
-              <p className="text-sm text-gray-600">{submission.name}</p>
-              <p className="text-sm text-gray-600">{submission.age}</p>
-              <p className="text-sm text-gray-600">{submission.title}</p>
-              <p className="text-sm text-gray-600">{submission.hometown}</p>
+            <div className="confirmation-card"
+              >
+              <p>{submission.name}</p>
+              <p>{submission.age}</p>
+              <p>{submission.title}</p>
+              <p>{submission.hometown}</p>
             </div>
           ))}
         </div>
       )}
 
-      <button onClick={onBack} className="mt-6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+      <button onClick={onBack}>
         Back to Form
       </button>
     </main>

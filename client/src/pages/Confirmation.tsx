@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 
 function Confirmation({ data, onBack }: ConfirmationProps) {
-  const [submissions, setSubmissions] = useState<Submission[]>([{id: 1, name: "test", age: 30, title: "fake person" ,hometown: "test town"}]); // fake data to test previous subs
+  const [submissions, setSubmissions] = useState<Submission[]>([{ name: "test", age: "30", title: "fake person" ,hometown: "test town"}]); // fake data to test previous subs
   const [loading, setLoading] = useState(true);
 
 
@@ -29,7 +29,6 @@ function Confirmation({ data, onBack }: ConfirmationProps) {
         <div className="space-y-4">
           {submissions.map((submission) => (
             <div
-              key={submission.id}
               className="border p-4 rounded shadow-sm bg-white"
             >
               <p className="text-sm text-gray-600">{submission.name}</p>

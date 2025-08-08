@@ -10,9 +10,8 @@ export interface ConfirmationProps {
 
 // submission
 export interface Submission {
-  id: number,
   name: string
-  age: number
+  age: string
   title: string
   hometown: string
 }

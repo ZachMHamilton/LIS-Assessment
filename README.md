@@ -13,20 +13,20 @@ This is a full-stack coding exercise that implements a basic submission tracker.
         - Set env variables for your database
         - Table structure can be found in server/models/submission.ts
       - If using in memory store
-        - Set useDb flag in server.ts to true
-4. Run 'npm run dev' in terminal
+        - Set useDb flag in server.ts to false
+4. Run 'npm run dev' in terminal (this runs client and server concurrently)
 
 ## Project Structure
 
 /client          # React + Vite frontend
-  ├── pages        # Two main component pages
-  ├── App.tsx      # Routing component
-  ├── types.ts     # Basic types
-  ├── main.tsx     # Main entry point for react
-  └── index.ts     # Base html entry
+  |____ /pages       # Two main component pages
+  |____ App.tsx      # Routing component
+  |____ types.ts     # Basic types
+  |____ main.tsx     # Main entry point for react
+  |____ index.ts     # Base html entry
 /server          # Express + Node backend
-  ├── controllers  # Primary business logic
-  ├── routes       # Defines endpoints
-  ├── db           # SQL and in-memory storage implementations
-  ├── models       # Schemas/types
+  ├── /controllers  # Primary business logic
+  ├── /routes       # Defines endpoints
+  ├── /db           # SQL and in-memory storage implementations
+  ├── /models       # Schemas/types
   └── index.ts     # Server entry point

@@ -3,6 +3,7 @@ import pool from "./db";
 
 const app = express();
 const PORT = 3000;
+const useDb = "true";
 
 app.use(express.json());
 

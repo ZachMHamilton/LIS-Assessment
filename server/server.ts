@@ -2,7 +2,6 @@ import express from 'express';
 import submissionRoute from './routes/submissionRoute';
 import { inDb } from './db/inDb';
 import { inMemory } from './db/inMemory';
-
 const app = express();
 const PORT = 3000;
 

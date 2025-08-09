@@ -15,6 +15,7 @@ This is a full-stack coding exercise that implements a basic submission tracker.
         - Table structure can be found in server/models/submission.ts
       - If using in memory store
         - Set useDb flag in server.ts to false
+        - Note: With in memory store, data will be lost when app is restarted
 5. Run 'npm run dev' in terminal (this runs client and server concurrently)
 
 ## Project Structure
